@@ -25,7 +25,12 @@
     </div>
     <div class="container">
         <section id="posts">
-          <p>posts go here</p>
+          <h2>Posts</h2>
+          <ul>
+              {% for post in site.posts }
+                <li>{{ post.title }} (original post date: {{ post.date }})</li>
+              {% endfor %}              
+          </ul>
         </section>
     </div>
     <section id="downloads">
