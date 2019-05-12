@@ -40,7 +40,7 @@ The idea is:
 
 You can then use this as a planning tool for areas that need further focus or prioritization. 
 
-Here's an image of a ![semi-complete Que Vive](assets/que-vive-sample.png)
+Here's an image of an in progress que vive session: ![semi-complete Que Vive](/assets/que-vive-sample.png)
 
 
 ## Next steps & feedback
