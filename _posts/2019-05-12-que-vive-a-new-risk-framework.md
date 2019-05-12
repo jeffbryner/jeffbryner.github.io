@@ -18,7 +18,7 @@ While these base infrastructure pieces are important, it can be hard to explain 
 a framework to allow you to tie these back to business impact/need. This is where Que Vive can help. 
 
 ## Que Vive: what's in a name?
-[Que Vive](https://www.wordnik.com/words/qui%20vive) comes from the 'who goes there' call of the French Sentinel and signifies a state of heightened vigilance, watchfullness, an vigilence. 
+[Que Vive](https://www.wordnik.com/words/qui%20vive) comes from the 'who goes there' call of the French Sentinel and signifies a state of heightened vigilance, and watchfullness.
 
 This framework is meant to give you the same heightened awareness of why you are doing what you are doing.
 
