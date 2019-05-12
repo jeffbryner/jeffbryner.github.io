@@ -1,5 +1,5 @@
 ---
 layout: default
-title: Jeff Bryner .:. blog
+title: Jeff Bryner -- blog
 ---
 ## blog goes here
