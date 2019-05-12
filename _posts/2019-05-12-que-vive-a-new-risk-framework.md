@@ -30,15 +30,15 @@ Que Vive takes this framework and uses your own rating of your progress in the N
 ## The Framework
 Here's a link to the [base, starter spreadsheet for Que Vive]().
 
-The idea is:
+The process is as follows:
 
 - List your assets; the things you worry about being hacked
 - List your threats; the things you worry about happening to your assets
 - Rate the worst case impact of each threat occuring to each asset
-- Check each category of the NIST CSF that you feel you have covered
+- Check each category of the NIST CSF that you feel you have covered for this occurance
 - Que Vive will then calculate your resulting risk
 
-You can then use this as a planning tool for areas that need further focus or prioritization. 
+You can then use this as a planning tool for areas that need further focus or prioritization. Since it's a simple spreadsheet, you can fully customize the rankings, risk calc, etc.
 
 Here's an image of an in progress que vive session: ![semi-complete Que Vive](/assets/que-vive-sample.png)
 
