@@ -1,4 +1,4 @@
 ---
-title: Jeff Bryner -- blog
+title: Home
 ---
 ## blog goes here
