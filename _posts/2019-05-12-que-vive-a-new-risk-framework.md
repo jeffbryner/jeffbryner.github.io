@@ -28,7 +28,7 @@ I'm a fan of the [NIST Cybersecurity Framework](https://www.nist.gov/cyberframew
 Que Vive takes this framework and uses your own rating of your progress in the NIST CSF as an indicator of likelihood. Coupling that with Impact, Assets and Threats gives you an view into your state of affairs in an approachable, methodology that you can use to explain *why* you are engaged in an infosec project.
 
 ## The Framework
-Here's a link to the [base, starter spreadsheet for Que Vive]().
+Here's a link to the [base, starter spreadsheet for Que Vive](https://docs.google.com/spreadsheets/d/1jVFS6Uh6BTsGGc6yTFi1mQmCC8Vf0sQPfsu_9JpK7XE/edit?usp=sharing).
 
 The process is as follows:
 
@@ -45,4 +45,4 @@ Here's an image of an in progress que vive session: ![semi-complete Que Vive](/a
 
 ## Next steps & feedback
 
-Grab yourself a copy, give it a go with ratings for your environment and let me know how it works, what can be improved, things that aren't clear, etc. Best bet is to open issues in the github repo.
+[Grab yourself a copy here](https://docs.google.com/spreadsheets/d/1jVFS6Uh6BTsGGc6yTFi1mQmCC8Vf0sQPfsu_9JpK7XE/edit?usp=sharing), give it a go with ratings for your environment and let me know how it works, what can be improved, things that aren't clear, etc. Best bet is to [open issues in the github repo](https://github.com/jeffbryner/que-vive).
