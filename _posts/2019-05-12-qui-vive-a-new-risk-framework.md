@@ -40,7 +40,7 @@ The process is as follows:
 
 You can then use this as a planning tool for areas that need further focus or prioritization. Since it's a simple spreadsheet, you can fully customize the rankings, risk calc, etc.
 
-Here's an image of an in progress Qui vive session: ![semi-complete Qui Vive](/assets/Qui-vive-sample.png)
+Here's an image of an in progress Qui vive session: ![semi-complete Qui Vive](/assets/qui-vive-sample.png)
 
 
 ## Next steps & feedback
