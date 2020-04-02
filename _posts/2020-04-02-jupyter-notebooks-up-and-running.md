@@ -8,8 +8,10 @@ Jupyter notebooks are very popular in data science but not so much in the infose
 
 ## Prerequisites
 While you can [try out jupyter notebooks online](https://jupyter.org/try), you’ll find right away that you’d like to start creating, storing and sharing notebooks so let’s install locally. I’m going to make some assumptions that you already have a couple things installed on your local machine:
-Python 3 ([windows](https://docs.python-guide.org/starting/install3/win/) | [mac](https://docs.python-guide.org/starting/install3/osx/) )
-Pipenv ( [windows | mac](http://thinkdiff.net/python/python-official-pipenv-packaging-tool-for-virtualenv-and-pip-in-mac-and-windows/) [windows | mac](https://docs.python-guide.org/dev/virtualenvs/#virtualenvironments-ref) )
+
+
+* Python 3 ([windows](https://docs.python-guide.org/starting/install3/win/) | [mac](https://docs.python-guide.org/starting/install3/osx/) )
+* Pipenv ( [windows | mac](http://thinkdiff.net/python/python-official-pipenv-packaging-tool-for-virtualenv-and-pip-in-mac-and-windows/) [windows | mac](https://docs.python-guide.org/dev/virtualenvs/#virtualenvironments-ref) )
 
 Python is the default kernel for jupyter and the one we will use in these series of posts though others are available for everything from [javascript, to R to rust](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels). Pipenv is (in my opinion) the easiest way to manage virtual environments for python to save you from messing with your OS’s python environment.
 
