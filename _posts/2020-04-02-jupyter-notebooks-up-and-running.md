@@ -36,6 +36,8 @@ You should find that your system has opened a new browser window pointing to a l
 ![new jupyter window](/assets/jupyter-up-and-running/browser_window.png)
 
 You can create a new notebook with the pull down menu on the right hand side of the window by choosing a python 3 kernel. Note that you can also start a terminal in the environment, or create other documents like text files.
+
+
 ![new notebook](/assets/jupyter-up-and-running/new_notebook.png)
 
 It’s a good habit to name your notebooks as you create them so you don’t end up with a directory full of files simply named ‘untitled’. You can rename a notebook by simply clicking on the “Untitled” name and choosing a new name.
@@ -69,6 +71,6 @@ Here’s a sample session getting the list of top 10 bad IPs for a day and getti
 
 Hopefully by now you are seeing how you can use notebooks to combine data from a variety of sources to help you investigate issues within your environment. Using notebooks gives you a fast, auditable, reliable, repeatable playbook process that when combined with source control, SIEM, EDR APIs, etc can be a real game changer for security teams of all sizes.
 
-You can find the [notebook used in this post here](/assets/jupyter_up_and_running.ipynb) to help you get a kickstart.
+You can find the [notebook used in this post here](https://github.com/jeffbryner/jeffbryner.github.io/blob/master/assets/jupyter-up-and-running/jupyter_up_and_running.ipynb) to help you get a kickstart.
 
 Look for deeper dives in the future posts into particular infosec exercises making use of notebook environments to solve common security scenarios.
