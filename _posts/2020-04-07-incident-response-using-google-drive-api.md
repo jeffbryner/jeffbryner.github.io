@@ -1,6 +1,6 @@
 ---
 title:  "Incident response using the Google Drive API"
-tags: [infosec, python, incident response]
+tags: [infosec, python, incident response, jupyter]
 author: Jeff
 ---
 ## Google Drive
@@ -42,7 +42,7 @@ Paste this Email identifier into the Admin console field asking for “Client Na
 
 You should see the ‘unique id’/’client id’ of your service account and the drive api scope listed in the resulting list.
 
-Now we need to enable domain-wide delegation within the service account. In the ‘service account details’ screen choose edit and click the pull down for “show domain-wide delegation” and choose ‘Enable G Suite Domain-wide Delegation”
+Now we need to enable domain-wide delegation within the service account. In the ‘service account details’ screen choose edit and click the pull down for “show domain-wide delegation” and choose ‘Enable G Suite Domain-wide Delegation” <br>
 ![show delegation](/assets/incident-response-drive-api/show_domain_delegation.png)
 
 You may be prompted to also add a consent screen title and contact information:
