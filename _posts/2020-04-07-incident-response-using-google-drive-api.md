@@ -22,7 +22,7 @@ Lets enable the Drive API by choosing “enable apis and services” from the �
 Search for “Drive” and click the “enable” button.
 
 Now we will need a service account and credentials. There are multiple ways to get to the screen to create service accounts. The easiest is the navigation menu in the upper left, IAM & Admin and then service accounts:
-<img src="/assets/incident-response-drive-api/service_account_navigation.png" alt="service account navigation" width=10vw/>
+<img src="/assets/incident-response-drive-api/service_account_navigation.png" alt="service account navigation" width="10vw">
 
 Click create service account and give it a meaningful name and description:
 ![service account naming](/assets/incident-response-drive-api/service_account_naming.png)
