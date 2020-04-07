@@ -6,7 +6,7 @@ author: Jeff
 ## Google Drive
 Realtime, web-based file systems like Google Drive have changed the way organizations operate and interface with each other. Sharing documents between individuals used to mean email attachments, network drive mapping, etc. Now it’s as easy to share a doc as sending someone a link.
 
-Unfortunately too often sharing controls are mis-used, or misunderstood which can result in data leaks and in some cases escalations leading to information system compromise. In this post I’ll take you through using jupyter notebooks to do an investigation of a Gsuite environment to find and fix a file that’s been incorrectly shared.
+Unfortunately too often sharing controls are misused, or misunderstood which can result in data leaks and in some cases escalations leading to information system compromise. In this post I’ll take you through using jupyter notebooks to do an investigation of a Gsuite environment to find and fix a file that’s been incorrectly shared.
 
 
 ## GDrive API
@@ -22,7 +22,7 @@ Lets enable the Drive API by choosing “enable apis and services” from the �
 Search for “Drive” and click the “enable” button.
 
 Now we will need a service account and credentials. There are multiple ways to get to the screen to create service accounts. The easiest is the navigation menu in the upper left, IAM & Admin and then service accounts:
-![service account navigation](/assets/incident-response-drive-api/service_account_navigation.png)
+![service account navigation](/assets/incident-response-drive-api/service_account_navigation.png){width=20px}
 
 Click create service account and give it a meaningful name and description:
 ![service account naming](/assets/incident-response-drive-api/service_account_naming.png)
