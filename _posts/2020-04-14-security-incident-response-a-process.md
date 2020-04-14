@@ -41,7 +41,7 @@ A template is not exactly a plan. A template doesn’t tell you the specific ste
 ##Here’s a Template
 While at Mozilla my team responded to many security incidents and in the process worked up a template that served us well. Being open is central to the mission of Mozilla and we published it, but the links have faded over time. [Here’s a refreshed copy of the template in Google Docs](https://drive.google.com/open?id=1o7T6n22eDhJZd2bYYMNPvnuuiO-hetcM1IoZxLBhL_I).
 
-![preview](/assets/incident-response-process/template_preview.png)
+[![preview](/assets/incident-response-process/template_preview.png)](https://drive.google.com/open?id=1o7T6n22eDhJZd2bYYMNPvnuuiO-hetcM1IoZxLBhL_I)
 
 Let me walk you through the sections, but first who uses this?
 
