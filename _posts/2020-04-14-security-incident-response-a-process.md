@@ -5,22 +5,20 @@ author: Jeff
 ---
 ## A Call for Help
 
-Recently while doom-scrolling Twitter during this pandemic I noticed this cry for help:
+Recently while doom-scrolling Twitter during this pandemic I noticed [this cry for help](https://twitter.com/AccidentalCISO/status/1247632236486287362):
 
-![cry for help](/assets/incident-response-process/cry_for_help.png)
+[![cry for help](/assets/incident-response-process/cry_for_help.png)](https://twitter.com/AccidentalCISO/status/1247632236486287362)
 
 I replied with a link to the Security Incident Response template that I’ve used for awhile now and thought it might be good to deep dive into its use.
 
-![a template!](/assets/incident-response-process/here_is_a_template.png)
+[![a template!](/assets/incident-response-process/here_is_a_template.png)](https://twitter.com/0x7eff/status/1247634699524005888)
 
 ## Incident Response
 Key to every security program is having a plan of action for when your team is asked to respond to a security incident. You don’t want to get a 2am (why is it always 2am?) wake up call/text/alarm and start making up a response plan.
 
 Usually efforts to generate response plans start out big and get bigger, attempting to address every potential outcome and cover every aspect of a system response until they amass volume after volume that will eventually sit on a shelf.
 
-```
-“Everybody has a plan until they..”
-```
+> “Everybody has a plan until they..”
 
 Your plan is not a process. What do you do for incidents which do not yet have a plan? You need a process.
 
