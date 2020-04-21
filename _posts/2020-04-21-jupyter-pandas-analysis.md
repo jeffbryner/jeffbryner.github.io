@@ -73,7 +73,7 @@ And of course infosec usually starts at the bottom:
 ```python
 df['cs-uri-stem'].value_counts().tail(10)
 ```
-<bottom10.png>
+
 ![bottom 10](/assets/jupyter-pandas-analysis/bottom10.png)
 
 We can see some folks probing for wordpress/php.
@@ -109,7 +109,6 @@ and put all this together to get a simple list of referrers:
 
 df[ (df['cs-uri-stem']=='/' ) & (df['ok']) & (df['bot']==False) ]['referer'].value_counts()
 ```
-<referrers.png>
 
 ![referers](/assets/jupyter-pandas-analysis/referers.png)
 
@@ -118,7 +117,6 @@ You’ll notice that when combining selector criteria, it’s best to separate t
 
 We can do the same sort of select combined with traditional python iteration to pull out details of folks probing for wordpress:
 
-<wordpress_probes.png>
 ![wordpress probes](/assets/jupyter-pandas-analysis/wordpress_probes.png)
 
 
@@ -141,7 +139,6 @@ I’ve found the best experience at the moment is to use the versions listed abo
 
 The Dash datatable is a full featured, dataframe browser that allows you to filter, sort, search and trim down your dataframe to hone in on the bits you are interested in. I’ve used it with hundreds of thousands of records so don’t be afraid to load it up. It has ALOT of options, I’ve included the ones I’ve found so far to be the most useable:
 
-<datatable_options>
 
 ![data table options](/assets/jupyter-pandas-analysis/datatable_options.png)
 
