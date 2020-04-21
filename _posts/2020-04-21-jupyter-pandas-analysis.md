@@ -153,7 +153,7 @@ I hope this helps you get a kickstart with pandas for analysis and an easy way t
 
 References:
 
-- ![The notebook referenced here](
+- [The notebook referenced here](
     https://github.com/jeffbryner/jeffbryner.github.io/blob/master/assets/jupyter-pandas-analysis/s3_cloudfront_log_pandas_investigation.ipynb)
 - https://dash.plotly.com/datatable/reference
 - https://dash.plotly.com/datatable/sizing
