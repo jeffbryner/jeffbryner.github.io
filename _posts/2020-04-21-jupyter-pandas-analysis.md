@@ -127,7 +127,7 @@ We can do the same sort of select combined with traditional python iteration to 
 
 
 ## Datatable browsing
-One off analysis queries are fun, but sometimes you just need to browse the dataset in it’s entirety. For that, lets install and use the [datatable](https://dash.plotly.com/datatable) from Plotly’s dash project along with jupyer lab.
+One off analysis queries are fun, but sometimes you just need to browse the dataset in it’s entirety. For that, lets install and use the [datatable](https://dash.plotly.com/datatable) from Plotly’s dash project along with jupyer lab. ([note no windows support just yet](https://github.com/plotly/jupyterlab-dash/blob/4c97a83765fb88ad6a04eb5a4098ee0420b42406/jupyterlab_dash/__init__.py#L32))
 
 ![dash table](/assets/jupyter-pandas-analysis/dash_table.png)
 
