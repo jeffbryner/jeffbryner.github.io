@@ -8,7 +8,8 @@ Lets dig into doing cloudfront log analysis with jupyter, pandas and dash!
 ## Stealing tools from Data Science
 Data science has long been a fan of jupyter notebooks and libraries like pandas, numpy, etc for analysis. Let's take a look at using those same tools for infosec investigations. If you need a refresher on getting jupyter up and running, check out my [previous post](http://blog.jeffbryner.com/2020/04/02/jupyter-notebooks-up-and-running.html).
 
-<dash_table>
+>a dash table in action
+![dash table](/assets/jupyter-pandas-analysis/dash_table.png)
 
 In this post I’ll walk you through how to :
 
@@ -22,19 +23,24 @@ In this post I’ll walk you through how to :
 ## Connecting to AWS
 In this scenario we are reading in cloudfront logs from a distribution deposited in an S3 bucket. To my knowledge, cloudfront doesn’t organize it’s logs into folders within the bucket, it just deposits gzipped files names with the date:
 
-<cloudfront_logs>
+![raw cloudfront logs](/assets/jupyter-pandas-analysis/cloudfront_logs.png)
 
 So our first task is to connect to aws, find the logs we are interested in, unzip them and import them into pandas. The first cells are setting up the target S3 bucket and the date we are interested in.
 
-<variables>
+![variables](/assets/jupyter-pandas-analysis/variables.png)
 
 ### Gather cloudfront logs
-After that we paginate the s3 bucket list of keys matching our substring and pull in the contents into a pandas dataframe using it’s built in csv importer. Most of the code here is just dealing with buckets that may contain a mix of gzipped and non-gzipped files. Pandas is doing all the work to load the log data for us. Their csv module https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html is quite the engineering feat! You can tweak it almost endlessly to get it to properly read in data.
+After that we paginate the s3 bucket list of keys matching our substring and pull in the contents into a pandas dataframe using it’s built in csv importer. Most of the code here is just dealing with buckets that may contain a mix of gzipped and non-gzipped files.
+
+![s3 pagination](/assets/jupyter-pandas-analysis/s3_pagination.png)
+
+Pandas is doing all the work to load the log data for us. Their csv module https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html is quite the engineering feat! You can tweak it almost endlessly to get it to properly read in data.
 
 ## Pandas/Clean up
 If you’ve never used pandas, it’s a dataframe oriented library that makes it easy to slice and dice data in large quantities. It is customary to name your dataframe variables ‘df’ so when you see tutorials referencing ‘df’ they are using a [dataframe object](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html). You can get a peak at what it has loaded with the df.head() function:
 
-<dataframe_head>
+
+![dataframe head](/assets/jupyter-pandas-analysis/dataframe_head.png)
 
 This will give you a quick overview, but not all the columns that have been loaded. For that, we do some inspection and clean up of the column names. df.columns.to_list() is the easiest way I’ve found to get a look at what pandas has read in as columns. You can rename the columns to your liking if you need to. Spaces and special characters can get annoying so here are two ways to rename columns
 
@@ -60,17 +66,19 @@ Now comes the fun part. Pandas can do a bunch of work we infosec folks would usu
 ```python
 df['cs-uri-stem'].value_counts().head(10)
 ```
-<top10.png>
+![top10](/assets/jupyter-pandas-analysis/top10.png)
+
 
 And of course infosec usually starts at the bottom:
 ```python
 df['cs-uri-stem'].value_counts().tail(10)
 ```
 <bottom10.png>
+![bottom 10](/assets/jupyter-pandas-analysis/bottom10.png)
 
 We can see some folks probing for wordpress/php.
 
-The .str function is especially useful for allowing us to do basic string matching. Combine that with pandas’ functions for selecting rows and you can start to get basic counts:
+The ```.str``` function is especially useful for allowing us to do basic string matching. Combine that with pandas’ functions for selecting rows and you can start to get basic counts:
 
 ```python
 # How many hits from bots?
@@ -103,16 +111,21 @@ df[ (df['cs-uri-stem']=='/' ) & (df['ok']) & (df['bot']==False) ]['referer'].val
 ```
 <referrers.png>
 
+![referers](/assets/jupyter-pandas-analysis/referers.png)
+
 You’ll notice that when combining selector criteria, it’s best to separate them all with parenthesis.
 
 
 We can do the same sort of select combined with traditional python iteration to pull out details of folks probing for wordpress:
 
 <wordpress_probes.png>
+![wordpress probes](/assets/jupyter-pandas-analysis/wordpress_probes.png)
 
 
 ## Datatable browsing
 One off analysis queries are fun, but sometimes you just need to browse the dataset in it’s entirety. For that, lets install and use the [datatable](https://dash.plotly.com/datatable) from Plotly’s dash project along with jupyer lab.
+
+![dash table](/assets/jupyter-pandas-analysis/dash_table.png)
 
 From your python jupyter environment ([see how to setup here](http://blog.jeffbryner.com/2020/04/02/jupyter-notebooks-up-and-running.html) ) install some specific libraries
 
@@ -121,7 +134,7 @@ pipenv install jupyterlab==1.0 jupyterlab-dash==0.1.0a3
 jupyter labextension install jupyterlab-dash@0.1.0-alpha.3
 ```
 
-And instead of running jupyter notebook, run:
+And instead of running ```jupyter notebook```, run:
 ```jupyter lab```
 
 I’ve found the best experience at the moment is to use the versions listed above to avoid some gotchas between various apis.
@@ -130,16 +143,21 @@ The Dash datatable is a full featured, dataframe browser that allows you to filt
 
 <datatable_options>
 
+![data table options](/assets/jupyter-pandas-analysis/datatable_options.png)
+
 When you load it up with your pandas dataframe, you get a separate window that you can use to filter data, hide columns, sort, etc. Here’s a filter for anything with ‘wp’ in the cs-uri-stem column. You can easily combine these to really narrow in;
 
 
-<datatable filter>
+![datatable filter](/assets/jupyter-pandas-analysis/datatable_filter.png)
 
 
+## May You Prosper!
 I hope this helps you get a kickstart with pandas for analysis and an easy way to browse a dataset. Hopefully this helps you in your next investigation!
 
 References:
 
+- ![The notebook referenced here](
+    https://github.com/jeffbryner/jeffbryner.github.io/blob/master/assets/jupyter-pandas-analysis/s3_cloudfront_log_pandas_investigation.ipynb)
 - https://dash.plotly.com/datatable/reference
 - https://dash.plotly.com/datatable/sizing
 
