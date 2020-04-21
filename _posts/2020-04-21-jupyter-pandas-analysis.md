@@ -53,7 +53,8 @@ There’s a rename function:
 
 
 ```python
-# Fix up column names to be more friendlydf.rename(columns={'cs(Referer)': 'referer'}, inplace=True)
+# Fix up column names to be more friendly
+df.rename(columns={'cs(Referer)': 'referer'}, inplace=True)
 ```
 
 Or you can act on all columns at once:
