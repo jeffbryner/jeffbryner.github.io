@@ -31,11 +31,15 @@ So our first task is to connect to aws, find the logs we are interested in, unzi
 ![variables](/assets/jupyter-pandas-analysis/variables.png)
 
 ### Gather cloudfront logs
-After that we paginate the s3 bucket list of keys matching our substring and pull in the contents into a pandas dataframe using it’s built in csv importer. Most of the code here is just dealing with buckets that may contain a mix of gzipped and non-gzipped files.
+After that we paginate the s3 bucket list of keys matching our substring and pull in the contents into a pandas dataframe using it’s built in csv importer. Most of the code here is just dealing with finding buckets and then handling a mix of gzipped and non-gzipped files.
 
 ![s3 pagination](/assets/jupyter-pandas-analysis/s3_pagination.png)
 
-Pandas is doing all the work to load the log data for us. Their csv module https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html is quite the engineering feat! You can tweak it almost endlessly to get it to properly read in data.
+![s3 unzip](/assets/jupyter-pandas-analysis/s3_unzip.png)
+
+Pandas is doing all the work to load the log data for us. [Their csv module](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) is quite the engineering feat! You can tweak it almost endlessly to get it to properly read in data.
+
+![pandas csv](/assets/jupyter-pandas-analysis/pandas_csv.png)
 
 ## Pandas/Clean up
 If you’ve never used pandas, it’s a dataframe oriented library that makes it easy to slice and dice data in large quantities. It is customary to name your dataframe variables ‘df’ so when you see tutorials referencing ‘df’ they are using a [dataframe object](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html). You can get a peak at what it has loaded with the df.head() function:
