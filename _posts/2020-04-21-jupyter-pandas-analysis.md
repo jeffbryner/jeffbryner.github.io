@@ -3,7 +3,8 @@ title:  "Using Pandas to dig into cloudfront logs"
 tags: [infosec, investigations, incident response, jupyter, pandas]
 author: Jeff
 ---
-Let's have some more jupyter fun and dig into doing cloudfront log analysis with jupyter, pandas and dash!
+Let's have some more jupyter fun and dig into doing cloudfront log analysis with jupyter, pandas and dash using [this notebook](
+    https://github.com/jeffbryner/jeffbryner.github.io/blob/master/assets/jupyter-pandas-analysis/s3_cloudfront_log_pandas_investigation.ipynb)!
 
 ## Stealing tools from Data Science
 Data science has long been a fan of jupyter notebooks and libraries like pandas, numpy, etc for analysis. Let's take a look at using those same tools for infosec investigations. If you need a refresher on getting jupyter up and running, check out my [previous post](http://blog.jeffbryner.com/2020/04/02/jupyter-notebooks-up-and-running.html).
