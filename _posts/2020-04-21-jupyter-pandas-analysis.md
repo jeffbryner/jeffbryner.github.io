@@ -94,7 +94,7 @@ The ```df[ df[‘fieldname’] ]``` is a selector, similar to [SQL](https://pand
 
 ```len(df[df['sc-status'].isin([200])])```  gives us a count of hits with a 200/ok status. Remove the ‘len’ function and you could get a list of all the hits, complete with columns.
 
-A neat trick I learned from a pancakescon talk is to setup some boolean values using column values to make selection easier
+A neat trick I learned from a [pancakescon talk](https://github.com/mttaggart/jupyter-pancakes/blob/master/log_analysis.ipynb) is to setup some boolean values using column values to make selection easier
 
 Lets create a ‘bot’ column that’s True if the user-agent column contains ‘bot’ in the string:
 
