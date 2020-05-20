@@ -5,19 +5,19 @@ author: Jeff
 ---
 
 ## Old Friends
-When you do infosec for awhile you gather a collection of 'old friends'; tools you rely on over the years to help you get your job done. Some are simple like dd, or xxd. Some are complex (vsCode?) but it's fun to revisit some old friends in new context to see how they play out.
+When you do infosec for a while you gather a collection of 'old friends'; tools you rely on over the years to help you get your job done. Some are simple like dd, or xxd. Some are complex (vsCode?) but it's fun to revisit some old friends in new context to see how they play out.
 ![a gif we found](/assets/forensics-with-old-friends/a-gif-we-found.gif)
 
 <small>Note to reader: Taylor is not actually an old friend. </small>
 
 ## Forensics
-I recently had the chance to take [Sara Edwards' SANS course FOR 518 for Mac Forensics](https://www.sans.org/course/mac-and-ios-forensic-analysis-and-incident-response) and it was a blast. A week's worth of digging through Mac/Iphone artifacts culminating with a team challenge to solve a case using what we had learned. It was great fun and brought me back to revisit some core skills.
+I recently had the chance to take [Sara Edwards' SANS course FOR 518 for Mac Forensics](https://www.sans.org/course/mac-and-ios-forensic-analysis-and-incident-response) and it was a blast! A week's worth of digging through Mac/Iphone artifacts culminating with a [team challenge](https://twitter.com/iamevltwin/status/1262023033293877248) to solve a case using what we had learned. It was great fun and was a chance to revisit some core skills.
 
 ## File Carving
 If you do forensics for any length of time, you'll have occasion to [carve out a file](https://en.wikipedia.org/wiki/File_carving) from a binary blob of nothing. Could be a broken disk, could be a stream intercepted from the network, regardless having an old friend that helps you find and retrieve a file is invaluable.
 
 ## Hachoir
-Hachoir means 'meat grinder' in French and is the name of a [python project used to parse out structures in all sorts of data](https://hachoir.readthedocs.io/en/latest/). The project was of great help to me over the years when I needed to, oh say [parse out MSTask job files](https://github.com/vstinner/hachoir/blob/master/hachoir/parser/misc/mstask.py#L5) to find malicious entries.
+Hachoir means 'meat grinder' in French and is the name of a [python project used to parse out structures in all sorts of data](https://hachoir.readthedocs.io/en/latest/). The project was a big help to me over the years when I needed to, oh say [parse out MSTask job files](https://github.com/vstinner/hachoir/blob/master/hachoir/parser/misc/mstask.py#L5) to find malicious entries.
 
 ## Jupyter
 I decided to revisit this old friend to see if I could whip up a jupyter notebook for file carving making use of the variety of [parsers available in Hachoir](https://hachoir.readthedocs.io/en/latest/parser.html).
@@ -26,18 +26,18 @@ I decided to revisit this old friend to see if I could whip up a jupyter noteboo
 In this scenario we've been handed a blob of data and asked to retrieve the last frame of a .gif within the blob. This could have come from a network stream, a bad flash drive, memory, anywhere. To Hachoir it doesn't matter.
 
 ## The Notebook
-[Lets dig into the notebook for this task](/assets/forensics-with-old-friends/hachoir-inspection-file-carving.ipynb). If you want to play along at home here is the source file, [a blob of who knows what](/assets/forensics-with-old-friends/ablob_of_who_knows_what).
+[Lets dig into the notebook for this task](/assets/forensics-with-old-friends/hachoir-inspection-file-carving.ipynb). If you want to play along at home [here is the source file; a blob of who knows what](/assets/forensics-with-old-friends/ablob_of_who_knows_what).
 
-First off, we can get a good look at the parsers imbedded in Hachoir:
+First off, we can get a peak at the parsers imbedded in Hachoir:
 ![parsers](/assets/forensics-with-old-friends/parserlist.png)
 
 Any chance we just get it right off the bat?
 ![no joy](/assets/forensics-with-old-friends/nojoy.png)
 
-Do we have a wild guess from the header?
+No joy. Do we have a wild guess from the header?
 ![guess](/assets/forensics-with-old-friends/guess.png)
 
-No luck, ok lets turn to our old friend and see if Hachoir can step through the file and find anything
+No luck, ok lets turn to our old friend and see if Hachoir can step through the file and find anything.
 
 ```Python
 # step through the file to see if we can recognize a portion of it
