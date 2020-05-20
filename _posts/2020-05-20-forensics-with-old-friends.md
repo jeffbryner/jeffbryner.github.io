@@ -26,7 +26,7 @@ I decided to revisit this old friend to see if I could whip up a jupyter noteboo
 In this scenario we've been handed a blob of data and asked to retrieve the last frame of a .gif within the blob. This could have come from a network stream, a bad flash drive, memory, anywhere. To Hachoir it doesn't matter.
 
 ## The Notebook
-[Lets dig into the notebook for this task](/assets/forensics-with-old-friends/hachoir-insection-file-carving.ipynb). If you want to play along at home here is the source file, [a blob of who knows what](/assets/forensics-with-old-friends/ablob_of_who_knows_what).
+[Lets dig into the notebook for this task](/assets/forensics-with-old-friends/hachoir-inspection-file-carving.ipynb). If you want to play along at home here is the source file, [a blob of who knows what](/assets/forensics-with-old-friends/ablob_of_who_knows_what).
 
 First off, we can get a good look at the parsers imbedded in Hachoir:
 ![parsers](/assets/forensics-with-old-friends/parserlist.png)
