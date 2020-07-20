@@ -196,17 +196,25 @@ The important bit here is to allow connections from the frontend service to the 
 If you've made it this far with a valid environment, deployment is as simple as a
 
 ```bash
-
 cdk deploy
 ```
-It will evaluate your python for validity, create a cloud formation template, evaluate it for security concerns, prompt you for allowing any security changes and execute the cloudformation deployment with realtime updates.
+
+### Compile and validate
+It will evaluate your python for validity, create a cloud formation template, evaluate it for security concerns, prompt you for allowing any security changes:
 
 ![evaluate for security concerns](/assets/aws-cdk-docker-explorations/security_verification.png)
+
+### Realtime cloud formation
+When you execute the cloudformation deployment you'll get realtime updates on the progress:
 ![build underway](/assets/aws-cdk-docker-explorations/build_underway.png)
 
+### Stack output
 If all goes well, you'll be rewarded with output of your load balanced endpoints that you can copy and paste into firefox to view your sample service!
 
 ![stack output](/assets/aws-cdk-docker-explorations/stack_output.png)
+
+### Voila
+The final webpage is a simple interactive service sending timestamps to redis and out to the flask template page:
 ![final webpage](/assets/aws-cdk-docker-explorations/final_service.png)
 
 Enjoy!
