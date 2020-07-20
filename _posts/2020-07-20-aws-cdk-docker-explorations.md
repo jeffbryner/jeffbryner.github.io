@@ -29,7 +29,7 @@ While the docker workflow is neat and works right out of the box it doesn't seem
 
 It's not intuitive and while there are examples, they don't quite get you there so to save the next person on this journey. Here's what works (so far).
 
-[Here's the github repo if you'd like to follow along in a real deployment](https://github.com/jeffbryner/aws-cdk-example-deployment)
+[Here's the github repo if you'd like to follow along in a real deployment](https://github.com/jeffbryner/aws-cdk-example-deployment). It includes setting up a pipenv environment with all the libraries you'll need, etc.
 
 
 ## The (simple) app
