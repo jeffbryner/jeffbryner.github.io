@@ -133,6 +133,7 @@ messages.append(ai_msg)
 
 ```
 ```markdown
+### output
 [{'name': 'multiply', 'args': {'a': 3.0, 'b': 12.0}, 'id': 'ce045e34-cbd7-4a33-9c91-707e5ed5b878', 'type': 'tool_call'}, {'name': 'add', 'args': {'a': 11.0, 'b': 49.0}, 'id': '22b23471-ec22-4d63-bff1-f03f03f727dc', 'type': 'tool_call'}]
 
 ```
