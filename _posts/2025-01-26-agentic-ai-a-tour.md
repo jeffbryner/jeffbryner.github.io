@@ -148,6 +148,8 @@ for tool_call in ai_msg.tool_calls:
 messages
 ```
 ```markdown
+### output
+
 [HumanMessage(content='What is 3 * 12? Also, what is 11 + 49?', additional_kwargs={}, response_metadata={}),
  AIMessage(content='\n', additional_kwargs={'function_call': {'name': 'multiplyadd', 'arguments': '{"a": 3.0, "b": 12.0}{"a": 11.0, "b": 49.0}'}}, response_metadata={'safety_ratings': [{'category': 'HARM_CATEGORY_HATE_SPEECH', 'probability_label': 'NEGLIGIBLE', 'blocked': False, 'severity': 'HARM_SEVERITY_NEGLIGIBLE'}, {'category': 'HARM_CATEGORY_DANGEROUS_CONTENT', 'probability_label': 'NEGLIGIBLE', 'blocked': False, 'severity': 'HARM_SEVERITY_NEGLIGIBLE'}, {'category': 'HARM_CATEGORY_HARASSMENT', 'probability_label': 'NEGLIGIBLE', 'blocked': False, 'severity': 'HARM_SEVERITY_NEGLIGIBLE'}, {'category': 'HARM_CATEGORY_SEXUALLY_EXPLICIT', 'probability_label': 'NEGLIGIBLE', 'blocked': False, 'severity': 'HARM_SEVERITY_NEGLIGIBLE'}, {'category': 'HARM_CATEGORY_HATE_SPEECH', 'probability_label': 'NEGLIGIBLE', 'blocked': False, 'severity': 'HARM_SEVERITY_NEGLIGIBLE'}, {'category': 'HARM_CATEGORY_DANGEROUS_CONTENT', 'probability_label': 'NEGLIGIBLE', 'blocked': False, 'severity': 'HARM_SEVERITY_NEGLIGIBLE'}, {'category': 'HARM_CATEGORY_HARASSMENT', 'probability_label': 'NEGLIGIBLE', 'blocked': False, 'severity': 'HARM_SEVERITY_NEGLIGIBLE'}, {'category': 'HARM_CATEGORY_SEXUALLY_EXPLICIT', 'probability_label': 'NEGLIGIBLE', 'blocked': False, 'severity': 'HARM_SEVERITY_NEGLIGIBLE'}, {'category': 'HARM_CATEGORY_HATE_SPEECH', 'probability_label': 'NEGLIGIBLE', 'blocked': False, 'severity': 'HARM_SEVERITY_NEGLIGIBLE'}, {'category': 'HARM_CATEGORY_DANGEROUS_CONTENT', 'probability_label': 'NEGLIGIBLE', 'blocked': False, 'severity': 'HARM_SEVERITY_NEGLIGIBLE'}, {'category': 'HARM_CATEGORY_HARASSMENT', 'probability_label': 'NEGLIGIBLE', 'blocked': False, 'severity': 'HARM_SEVERITY_NEGLIGIBLE'}, {'category': 'HARM_CATEGORY_SEXUALLY_EXPLICIT', 'probability_label': 'NEGLIGIBLE', 'blocked': False, 'severity': 'HARM_SEVERITY_NEGLIGIBLE'}], 'finish_reason': 'STOP'}, id='run-412efe60-2f51-481c-9d13-91c28d349785-0', tool_calls=[{'name': 'multiply', 'args': {'a': 3.0, 'b': 12.0}, 'id': 'ce045e34-cbd7-4a33-9c91-707e5ed5b878', 'type': 'tool_call'}, {'name': 'add', 'args': {'a': 11.0, 'b': 49.0}, 'id': '22b23471-ec22-4d63-bff1-f03f03f727dc', 'type': 'tool_call'}], usage_metadata={'input_tokens': 42, 'output_tokens': 7, 'total_tokens': 49}),
  ToolMessage(content='36', name='multiply', tool_call_id='ce045e34-cbd7-4a33-9c91-707e5ed5b878'),
@@ -160,6 +162,8 @@ Lastly we call the llm again with the new information so it can generate a resul
 llm_with_tools.invoke(messages)
 ```
 ```markdown
+### output
+
 AIMessage(content='3 * 12 is 36. 11 + 49 is 60. \n', additional_kwargs={}, response_metadata={'safety_ratings': [snipped.for.brevity], 'finish_reason': 'STOP'}, id='run-fc63e92b-fc62-4c6f-b5fb-c7f88b04c1b3-0', usage_metadata={'input_tokens': 57, 'output_tokens': 24, 'total_tokens': 81})
 ```
 
@@ -185,6 +189,8 @@ agent_executor = AgentExecutor(agent=agent, tools=tools)
 agent_executor.invoke({"input": question})
 ```
 ```markdown
+### output
+
 {'input': 'What is 3 * 32? Also, what is 11 + 49?',
  'output': '3 * 32 is 96. 11 + 49 is 60. \n'}
 ```
@@ -195,6 +201,8 @@ for step in agent_executor.stream({"input": question}):
     print(f"{step['messages']}\n\n")
 ```
 ```markdown
+### output
+
 [AIMessageChunk(content='', additional_kwargs={'function_call': {'name': 'multiply', 'arguments': '{"a": 3.0, "b": 32.0}'}}, response_metadata={'safety_ratings': [snipped.for.brevity], 'finish_reason': 'STOP'}, id='run-c58c557f-e380-4924-8d9a-ef6420c7fdc7', tool_calls=[{'name': 'multiply', 'args': {'a': 3.0, 'b': 32.0}, 'id': '084a05fc-f4b4-4f85-b933-93ca55a7f42b', 'type': 'tool_call'}], usage_metadata={'input_tokens': 47, 'output_tokens': 3, 'total_tokens': 50}, tool_call_chunks=[{'name': 'multiply', 'args': '{"a": 3.0, "b": 32.0}', 'id': '084a05fc-f4b4-4f85-b933-93ca55a7f42b', 'index': None, 'type': 'tool_call_chunk'}])]
 
 
@@ -232,6 +240,8 @@ print(result.data)
 print(result.all_messages())
 ```
 ```markdown
+### output
+
 "Hello, world!" is a traditional introductory program in computer programming. 
 
 [ModelRequest(parts=[SystemPromptPart(content='Be concise, reply with one sentence.', dynamic_ref=None, part_kind='system-prompt'), UserPromptPart(content='Where does "hello world" come from?', timestamp=datetime.datetime(2025, 1, 21, 19, 54, 7, 629789, tzinfo=datetime.timezone.utc), part_kind='user-prompt')], kind='request'), ModelResponse(parts=[TextPart(content='"Hello, world!" is a traditional introductory program in computer programming. \n', part_kind='text')], timestamp=datetime.datetime(2025, 1, 21, 19, 54, 9, 621057, tzinfo=datetime.timezone.utc), kind='response')]
@@ -265,6 +275,8 @@ print(result.data)
 print(result.all_messages())
 ```
 ```markdown
+### output
+
 The product of 12, 112, and 4 is 5376. 
 
 [ModelRequest(parts=[SystemPromptPart(content='Be concise, reply with one sentence.', dynamic_ref=None, part_kind='system-prompt'), UserPromptPart(content='What is 12*112 * 4?', timestamp=datetime.datetime(2025, 1, 21, 19, 59, 55, 853801, tzinfo=datetime.timezone.utc), part_kind='user-prompt')], kind='request'), ModelResponse(parts=[ToolCallPart(tool_name='multiply_numbers', args=ArgsDict(args_dict={'numbers': [12, 112, 4]}), tool_call_id=None, part_kind='tool-call')], timestamp=datetime.datetime(2025, 1, 21, 19, 59, 56, 753382, tzinfo=datetime.timezone.utc), kind='response'), ModelRequest(parts=[ToolReturnPart(tool_name='multiply_numbers', content=5376, tool_call_id=None, timestamp=datetime.datetime(2025, 1, 21, 19, 59, 56, 764839, tzinfo=datetime.timezone.utc), part_kind='tool-return')], kind='request'), ModelResponse(parts=[TextPart(content='The product of 12, 112, and 4 is 5376. \n', part_kind='text')], timestamp=datetime.datetime(2025, 1, 21, 19, 59, 57, 265541, tzinfo=datetime.timezone.utc), kind='response')]
@@ -306,12 +318,14 @@ print(result.data)
 print(result.usage())
 ```
 ```markdown
+### output
+
 Why don't dogs play poker? Because they keep getting 🐶  ace 🐶  of spades! 
 
 Usage(requests=3, request_tokens=199, response_tokens=131, total_tokens=330, details=None)
 
 ```
-It's great that this framework supplies an easy way to tailor the usage (tokens, requests) along with each agent. Without controls like this it is easy to overrun quotas. 
+Not exactly SNL, but it's great that this framework supplies an easy way to tailor the usage (tokens, requests) along with each agent. Without controls like this it is easy to overrun quotas. 
 
 Pydantic also goes much further with [graphs to control agent action](https://ai.pydantic.dev/graph/) which I did not explore.
 
@@ -400,6 +414,8 @@ response = generation_model.generate_content(
 logger.info(response.candidates)
 ```
 ```markdown
+### output
+
 INFO:root:[content {
   role: "model"
   parts {
@@ -497,6 +513,8 @@ print(response.text)
 
 ```
 ```markdown
+### output
+
 Today is Sunday.
 ```
 I like that tool definition is straightfoward and only requires declaring normal python function. The library does not appear to offer agent interaction like pydantic. 
@@ -568,6 +586,8 @@ response = agent.query("tell me the answer to this math problem: What is (121 + 
 print(str(response))
 ```
 ```markdown
+### output
+
 You are right! 
 ```
 
@@ -582,6 +602,8 @@ response = re_agent.chat("tell me the answer to this math problem: What is (121 
 print(str(response))
 ```
 ```markdown
+### output
+
 The answer is 615.
 ```
 Setting verbose=True would show me the thinking and the tool use
@@ -592,6 +614,8 @@ response = re_agent.chat("what day of the week is tomorrow?")
 print(str(response))
 ```
 ```markdown
+### output
+
 > Running step 2c16b54d-eab0-4695-85c3-75036ca28bba. Step input: what day of the week is tomorrow?
 Thought: The current language of the user is: English. I need to use a tool to help me answer the question.
 Action: day_of_week
@@ -661,6 +685,8 @@ agent=Agent(model=Gemini(id=model,
 agent.print_response("what is the best day of the week?")
 ```
 ```markdown
+### output
+
 ┏━ Message ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃                                                                              ┃
 ┃ what is the best day of the week?                                            ┃
@@ -701,6 +727,8 @@ assistant = Assistant(llm=LLM_Gemini(model=model), tools=[DuckDuckGo()], show_to
 assistant.print_response("Whats happening with Pete Carroll?", markdown=True)
 ```
 ```markdown
+### output
+
 ╭──────────┬───────────────────────────────────────────────────────────────────╮
 │ Message  │ Whats happening with Pete Carroll?                                │
 ├──────────┼───────────────────────────────────────────────────────────────────┤
@@ -737,6 +765,8 @@ agent.print_response("What movie had the highest metascore? What is it's descrip
 ```
 
 ```markdown
+### output
+
 INFO     Running: CREATE TABLE IF NOT EXISTS 'movies' AS SELECT * FROM          
          'https://phidata-public.s3.amazonaws.com/demo_data/IMDB-Movie-Data.csv'
 INFO     Running: SELECT Title, Description, Actors FROM movies ORDER BY        
@@ -892,6 +922,8 @@ await invoke_agent(agent, "Thank you", chat)
 ```
 
 ```markdown
+### output
+
 # user: 'Hello'
 
 INFO:semantic_kernel.agents.chat_completion.chat_completion_agent:[ChatCompletionAgent] Invoked VertexAIChatCompletion with message count: 2.
@@ -932,6 +964,8 @@ This was great! Rather large and a lot of setup compared to others but performed
 I attempted to use the [multi agent chat as described here](https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/examples/example-agent-collaboration?pivots=programming-language-python) but I was unable to get it to work. 
 It returned errors about the message formatting which I suspect is an incompatibilty with Gemini's preferred formatting
 ```markdown
+### output
+
 InvalidArgument: 400 Unable to submit request because it must include at least one parts field, which describes the prompt input. Learn more: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/gemini
 ```
 
