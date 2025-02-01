@@ -8,7 +8,7 @@ author: Jeff
 AI has made a lot of advances recently, most notably the ability to call tools and link LLMs together to form agents. [Nvidia describes this well](https://blogs.nvidia.com/blog/what-is-agentic-ai/): 
 
 ```
-Agentic AI uses sophisticated reasoning and iterative planning to solve complex, multi-step problems.
+Agentic AI uses soagnosticated reasoning and iterative planning to solve complex, multi-step problems.
 ```
 
 ## A tour
@@ -20,7 +20,7 @@ In this post I'll cover a starting viewpoint of:
 - [pydantic](https://github.com/pydantic/pydantic-ai/tree/main)
 - [google]() ([google-cloud-aiplatform](https://cloud.google.com/python/docs/reference/aiplatform/latest) vs [python-genai](https://github.com/googleapis/python-genai) )
 - [llama](https://docs.llamaindex.ai/en/stable/examples/agent/react_agent/)
-- [phidata](https://docs.phidata.com/introduction)
+- [agno](https://docs.agno.com/introduction)
 - [semantic kernel](https://github.com/microsoft/semantic-kernel/tree/main/python/samples/getting_started_with_agents)
 
 My work these days is mostly in google cloud, so I used vertexAI and Gemini as the LLM, and python notebooks for the code environment. 
@@ -629,30 +629,32 @@ Tomorrow is Tuesday.
 Neat! I appreciate how easy it is to create and use tools, even if one method doesn't appear to work as well for results. I also appreciated seeing the thought process rather than having to interpret messages. 
 
 
-## [phidata](https://docs.phidata.com/introduction)
+## [agno](https://docs.agno.com/introduction)
 
-Phidata wasn't on my radar, but I stumbled onto it via a [youtube video showing how you can use it and duckdb to create a streaming stats chat app](https://youtu.be/sVBFPNW_GGc?feature=shared). 
+(Note: agnodata just changed their name to agno. )
+Agno wasn't on my radar, but I stumbled onto it via a [youtube video showing how you can use it and duckdb to create a streaming stats chat app](https://youtu.be/sVBFPNW_GGc?feature=shared). 
 
 It's a feature-rich framework offering agents, storage for memory, tools and much more. 
 
 ```python
-!pip install phidata duckduckgo-search duckdb
+!pip install agno duckduckgo-search duckdb
 import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-from phi.agent import Agent, AgentMemory
-from phi.model.vertexai import Gemini
-from phi.llm.vertexai import Gemini as LLM_Gemini
-from phi.tools.duckdb import DuckDbTools
+from agno.agent import Agent, AgentMemory
+from agno.models.vertexai import Gemini
+from agno.tools.duckdb import DuckDbTools
 from textwrap import dedent
 
-from phi.memory.db.sqlite import SqliteMemoryDb
-from phi.storage.agent.sqlite import SqlAgentStorage
-from phi.memory.classifier import MemoryClassifier
-from phi.memory.summarizer import MemorySummarizer
-from phi.memory.manager import MemoryManager
+from agno.memory.db.sqlite import SqliteMemoryDb
+from agno.storage.agent.sqlite import SqliteAgentStorage
+from agno.memory.classifier import MemoryClassifier
+from agno.memory.summarizer import MemorySummarizer
+from agno.memory.manager import MemoryManager
+from agno.utils.pprint import pprint_run_response
+
 
 import json
 
@@ -682,7 +684,8 @@ agent=Agent(model=Gemini(id=model,
                          generation_config=generation_config,
                         safety_settings=safety_settings,),
             telemetry=False)
-agent.print_response("what is the best day of the week?")
+response=agent.run("what is the best day of the week?")
+pprint_run_response(response,markdown=True)
 ```
 ```markdown
 ### output
@@ -720,11 +723,10 @@ It's great that it can initiate a vertexAI model with little fuss and accept saf
 You can give it tools and easily use them to assist with answers: 
 
 ```python
-from phi.assistant import Assistant
-from phi.tools.duckduckgo import DuckDuckGo
+from agno.tools.duckduckgo import DuckDuckGo
 
-assistant = Assistant(llm=LLM_Gemini(model=model), tools=[DuckDuckGo()], show_tool_calls=True)
-assistant.print_response("Whats happening with Pete Carroll?", markdown=True)
+assistant = Agent(, tools=[DuckDuckGo()], show_tool_calls=True,debug_mode=True)
+assistant.print_response("Whats happening with Pete Carroll?", markdown=True,stream=True)
 ```
 ```markdown
 ### output
@@ -746,7 +748,7 @@ What really amazed me was the combination of using duckDb tools with an agent. H
 
 duckdb_tools = DuckDbTools(create_tables=False, export_tables=False, summarize_tables=False)
 duckdb_tools.create_table_from_path(
-    path="https://phidata-public.s3.amazonaws.com/demo_data/IMDB-Movie-Data.csv", table="movies"
+    path="https://agnodata-public.s3.amazonaws.com/demo_data/IMDB-Movie-Data.csv", table="movies"
 )
 
 agent = Agent(
@@ -760,20 +762,21 @@ agent = Agent(
     - movies: Contains information about movies from IMDB.
     It has columns for the Title, Genre, Description, Revenue (Millions), Metascore and Actors
     """),
+    debug_mode=True
 )
-agent.print_response("What movie had the highest metascore? What is it's description? Who were the actors?", stream=False)
+agent.print_response("What movie had the highest metascore? What is it's description? Who were the actors?", stream=True)
 ```
 
 ```markdown
 ### output
 
 INFO     Running: CREATE TABLE IF NOT EXISTS 'movies' AS SELECT * FROM          
-         'https://phidata-public.s3.amazonaws.com/demo_data/IMDB-Movie-Data.csv'
+         'https://agnodata-public.s3.amazonaws.com/demo_data/IMDB-Movie-Data.csv'
 INFO     Running: SELECT Title, Description, Actors FROM movies ORDER BY        
          Metascore DESC LIMIT 1                                                 
 ▰▰▰▱▱▱▱ Thinking...
 
-INFO:httpx:HTTP Request: POST https://api.phidata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.agnodata.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
 
 ┏━ Message ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃                                                                              ┃
