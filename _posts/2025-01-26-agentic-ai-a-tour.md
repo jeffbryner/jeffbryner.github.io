@@ -723,9 +723,9 @@ It's great that it can initiate a vertexAI model with little fuss and accept saf
 You can give it tools and easily use them to assist with answers: 
 
 ```python
-from agno.tools.duckduckgo import DuckDuckGo
+from agno.tools.duckduckgo import DuckDuckGoTools
 
-assistant = Agent(, tools=[DuckDuckGo()], show_tool_calls=True,debug_mode=True)
+assistant = Agent(, tools=[DuckDuckGoTools()], show_tool_calls=True,debug_mode=True)
 assistant.print_response("Whats happening with Pete Carroll?", markdown=True,stream=True)
 ```
 ```markdown
