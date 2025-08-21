@@ -38,7 +38,7 @@ There are many benefits to having a universal template you use for all your secu
 ## Drawbacks of a Template
 A template is not exactly a plan. A template doesn’t tell you the specific steps you’d use to respond to a phishing attack or a denial of service. It does however give you a process to use to respond that you can build into a plan for a specific type of incident. Capture the lessons learned from a phishing incident and use those to generate a plan/runbook. Capture the next steps and actions you performed in a denial of service and generate another plan/runbook. Now you are doing incident response and generating plans that by definition are based in reality.
 
-##Here’s a Template
+## Here’s a Template
 While at Mozilla my team responded to many security incidents and in the process worked up a template that served us well. Being open is central to the mission of Mozilla and we published it, but the links have faded over time. [Here’s a refreshed copy of the template in Google Docs](https://drive.google.com/open?id=1o7T6n22eDhJZd2bYYMNPvnuuiO-hetcM1IoZxLBhL_I).
 
 [![preview](/assets/incident-response-process/template_preview.png)](https://drive.google.com/open?id=1o7T6n22eDhJZd2bYYMNPvnuuiO-hetcM1IoZxLBhL_I)
@@ -91,4 +91,4 @@ Communication is key during an incident. Your PR, HR and Legal groups will want 
 Last, but not least a place to put details of logs or screenshots or other miscellaneous items that don’t fit anywhere else or are too detailed. This shouldn’t be terabytes of information, just key extracts that are pertinent to the discussion.
 
 ## Try it out!
-Feel free to copy the template somewhere and give it a whirl the next time you have a security incident to resolve. Let me know how it works for you and if you need any help with an incident, or your security program consider the services of a [vCISO](https://jeffbryner.com/vciso) to help get a kickstart.
+Feel free to copy the template somewhere and give it a whirl the next time you have a security incident to resolve. Let me know how it works for you!
