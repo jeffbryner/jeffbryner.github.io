@@ -92,3 +92,6 @@ Last, but not least a place to put details of logs or screenshots or other misce
 
 ## Try it out!
 Feel free to copy the template somewhere and give it a whirl the next time you have a security incident to resolve. Let me know how it works for you!
+
+
+And if you need any help with an incident, or your security program consider the services of a [vCISO](https://jeffbryner.com/vciso) to help get a kickstart.
