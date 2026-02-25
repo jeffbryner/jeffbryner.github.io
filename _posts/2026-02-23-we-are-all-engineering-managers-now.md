@@ -1,5 +1,5 @@
 ---
-title:  "We are all Engineering Managers Now"
+title: "We are all Engineering Managers Now"
 tags: [AI, engineering]
 author: Jeff
 ---
