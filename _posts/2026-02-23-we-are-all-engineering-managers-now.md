@@ -1,3 +1,9 @@
+---
+title:  "We are all Engineering Managers Now"
+tags: [AI, engineering]
+author: Jeff
+---
+
 Several interviews and talks have been making the rounds lately. This one with [Lex Fridman and Peter Steinberger](https://youtu.be/wKy1_KLcxcs?t=629) and [this Config Management conference talk](https://www.youtube.com/watch?v=yxzghm3Fdj8&t=10718s) from Adam Jacob both struck me as related as we all adjust to working with AI.
 
 Jacob’s call out that “Ops velocity always follows dev velocity” was certainly proven true by the migration to the cloud and the subsequent DevOps movement. It will certainly be true again as developers harness AI and the capability to churn out code at breakneck pace.
