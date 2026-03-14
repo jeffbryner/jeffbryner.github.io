@@ -48,6 +48,9 @@ A significant hurdle involved coordinating Gemini's backend asynchronous functio
 
 When the Gemini Live API attempts to invoke the \`generate\_storyboard\` function, the FastAPI backend acts as an authoritative middleware layer. It intercepts the call and strictly validates the schema—ensuring exactly six steps are provided and that every step contains the mandatory \`step\_title\`, \`description\`, and \`image\_prompt\`. If Gemini hallucinates a malformed structure or returns an incorrect number of steps, the backend rejects the function call and feeds the validation error directly back to the agent for self-correction. Gemini is great at recognizing errors and self correcting when given feedback and this validation step greatly helped maintain the flow of the conversation.
 
+Lastly the dreaded 429 resource exhaustion is real. Quotas, limits for requests per minute and differences between Vertex and the API Key issued genai clients can cause confusion. For example instantiating a genai client with the API Key option does not allow you to specify certain parameters supported via vertex: 
+```Error: person_generation parameter is not supported in Gemini API.```
+
 # Conclusion
 
 This was a fun opportunity to both get a chance to work with my talented Sister and take new tech for a spin. Bonus points if the tech is actually useful to her and others in daily life\!   
