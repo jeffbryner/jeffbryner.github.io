@@ -4,8 +4,6 @@ tags: [gemini, google cloud, AI, audio]
 author: Jeff
 ---
 
-# Gemini Live Agent Challenge: StepPrep
-
 Google recently posted a [hackathon challenge](https://geminiliveagentchallenge.devpost.com) based on Gemini’s ability to use live audio, video and text. [My Sister](https://www.linkedin.com/in/emilybryner/) is an audio engineer and voice artist and I thought it would be a good opportunity to collaborate with her on a project and I’ve always wanted to build something using Gemini’s multimedia capabilities.
 
 We brainstormed a bit, and settled on the creative storyteller category. The interactive storybook example made her think of the storyboards she makes for her son who has autism. Storyboards are useful tools to help children anticipate new events that you or I may take for granted like going to the movies, getting a haircut, shopping at the store, or going to the doctor. They give a chance for child and parent to map out what will happen, anticipate trouble spots, highlights and ease any fears in anticipation of a new experience. 
