@@ -1,3 +1,9 @@
+---
+title:  "Gemini Live Agent Challenge: StepPrep"
+tags: [gemini, google cloud, AI, audio]
+author: Jeff
+---
+
 # Gemini Live Agent Challenge: StepPrep
 
 Google recently posted a [hackathon challenge](https://geminiliveagentchallenge.devpost.com) based on Gemini’s ability to use live audio, video and text. [My Sister](https://www.linkedin.com/in/emilybryner/) is an audio engineer and voice artist and I thought it would be a good opportunity to collaborate with her on a project and I’ve always wanted to build something using Gemini’s multimedia capabilities.
